@@ -17,7 +17,7 @@ import javax.swing.SwingConstants;
 
 import java.awt.Color;
 
-public class CleverVoca {
+public class Main {
 
 	private JFrame frame;
 	Font BlackBrutal;
@@ -28,7 +28,7 @@ public class CleverVoca {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					CleverVoca window = new CleverVoca();
+					Main window = new Main();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,7 +40,7 @@ public class CleverVoca {
 	/**
 	 * Create the application.
 	 */
-	public CleverVoca() {
+	public Main() {
 		initialize();
 	}
 
@@ -100,7 +100,6 @@ public class CleverVoca {
 		JLabel lblTest = new JLabel("Test");
 		lblTest.setBounds(930, 31, 62, 18);
 		TestPage.add(lblTest);
-		TestPage.setVisible(false);
 		
 		JPanel StartPage = new JPanel();
 		StartPage.setBackground(Color.WHITE);
@@ -152,6 +151,7 @@ public class CleverVoca {
 	            TestPage.setVisible(true);
 			}
 		});
+		TestPage.setVisible(false);
 		
 		
 	}
