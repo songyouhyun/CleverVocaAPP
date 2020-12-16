@@ -16,11 +16,14 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import java.awt.Color;
+import javax.swing.border.LineBorder;
+import javax.swing.JTextField;
 
 public class Main {
 
 	private JFrame frame;
 	Font BlackBrutal;
+	private JTextField txtWriteHere;
 	/**
 	 * Launch the application.
 	 */
@@ -53,20 +56,9 @@ public class Main {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
 		frame.getContentPane().setLayout(null);
-		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(150f);
-			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")));
-		} catch(IOException | FontFormatException e){
-			
-		}
-		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(70f);
-			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")));
-		} catch(IOException | FontFormatException e){
-			
-		}
+		
+		
+		
 		
 		JPanel WriteTestPage = new JPanel();
 		WriteTestPage.setBounds(0, 0, 1920, 1080);
@@ -74,18 +66,51 @@ public class Main {
 		WriteTestPage.setLayout(null);
 		
 		JPanel lineborderPanel = new JPanel();
+		lineborderPanel.setBorder(new LineBorder(new Color(0, 0, 0), 20, true));
 		lineborderPanel.setBounds(290, 290,1370, 700);
 		WriteTestPage.add(lineborderPanel);
 		lineborderPanel.setLayout(null);
 		
-		JLabel WritetestWord = new JLabel("New label");
-		WritetestWord.setBounds(457, 26, 62, 18);
+		JLabel WritetestWord = new JLabel("clever");
+		WritetestWord.setHorizontalAlignment(SwingConstants.CENTER);
+		WritetestWord.setBounds(409, 97, 560, 130);
 		lineborderPanel.add(WritetestWord);
+		try {
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(100f);
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")));
+		} catch(IOException | FontFormatException e){
+			
+		}
+		WritetestWord.setFont(BlackBrutal);
+		
+		txtWriteHere = new JTextField();
+		txtWriteHere.setHorizontalAlignment(SwingConstants.CENTER);
+		txtWriteHere.setBounds(409, 375, 560, 130);
+		lineborderPanel.add(txtWriteHere);
+		txtWriteHere.setColumns(10);
+		try {
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(130f);
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")));
+		} catch(IOException | FontFormatException e){
+			
+		}
+		txtWriteHere.setFont(BlackBrutal);
 		
 		JLabel Writetestlabel = new JLabel("Write Test");
-		Writetestlabel.setBounds(712, 82, 116, 18);
+		Writetestlabel.setHorizontalAlignment(SwingConstants.CENTER);
+		Writetestlabel.setBounds(695, 97, 560, 130);
 		Writetestlabel.setFont(BlackBrutal);
+		try {
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(130f);
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")));
+		} catch(IOException | FontFormatException e){
+			
+		}
 		WriteTestPage.add(Writetestlabel);
+		Writetestlabel.setFont(BlackBrutal);
 		
 		
 		
@@ -114,6 +139,13 @@ public class Main {
 		lblTitle.setFont(null);
 		lblTitle.setBounds(156, 169, 690, 310);
 		StartPage.add(lblTitle);
+		try {
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(150f);
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")));
+		} catch(IOException | FontFormatException e){
+			
+		}
 		lblTitle.setFont(BlackBrutal);
 		
 		JButton btnSearchModule = new JButton("Search Module");
@@ -122,7 +154,13 @@ public class Main {
 		btnSearchModule.setBackground(Color.WHITE);
 		btnSearchModule.setBounds(1041, 420, 380, 90);
 		StartPage.add(btnSearchModule);
-		btnSearchModule.setFont(BlackBrutal);
+		try {
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(70f);
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")));
+		} catch(IOException | FontFormatException e){
+			
+		}
 		btnSearchModule.setFont(BlackBrutal);
 		
 				
@@ -152,6 +190,7 @@ public class Main {
 			}
 		});
 		TestPage.setVisible(false);
+		StartPage.setVisible(false);
 		
 		
 	}
