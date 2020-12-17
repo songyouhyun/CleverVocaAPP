@@ -1,23 +1,27 @@
 package Main;
 
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.FontFormatException;
+import java.awt.Graphics;
 import java.awt.GraphicsEnvironment;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
-
-import java.awt.Color;
-import javax.swing.border.LineBorder;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.LineBorder;
+import java.awt.SystemColor;
 
 public class Main {
 
@@ -53,21 +57,19 @@ public class Main {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		ImagePanel BG = new ImagePanel(new ImageIcon("./image/BackgroundIMG(FIX).jpg").getImage());
+		frame.setSize(BG.getWidth(),BG.getHeight());
 		frame.setBounds(100, 100, 1920, 1080);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().add(BG);
 		frame.setLocationRelativeTo(null);
 		frame.getContentPane().setLayout(null);
-
-		JPanel StartPage = new JPanel();
-		StartPage.setBackground(Color.WHITE);
-		StartPage.setBounds(0, 0, 1902, 1033);
-		frame.getContentPane().add(StartPage);
-		StartPage.setLayout(null);
-
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
 		JLabel lblTitle = new JLabel("Clever Voca", SwingConstants.CENTER);
 		lblTitle.setFont(null);
 		lblTitle.setBounds(156, 169, 690, 310);
-		StartPage.add(lblTitle);
+		BG.add(lblTitle);
 		try {
 			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(150f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -80,9 +82,9 @@ public class Main {
 		JButton btnSearchModule = new JButton("Search Module");
 		btnSearchModule.setFont(null);
 		btnSearchModule.setBorder(null);
-		btnSearchModule.setBackground(Color.WHITE);
-		btnSearchModule.setBounds(1041, 420, 380, 90);
-		StartPage.add(btnSearchModule);
+		btnSearchModule.setBackground(SystemColor.info);
+		btnSearchModule.setBounds(1041, 420, 379, 67);
+		BG.add(btnSearchModule);
 		try {
 			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(70f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -95,30 +97,30 @@ public class Main {
 		JButton btnMakeModule = new JButton("Make Module");
 		btnMakeModule.setFont(null);
 		btnMakeModule.setBorder(null);
-		btnMakeModule.setBackground(Color.WHITE);
-		btnMakeModule.setBounds(1237, 592, 417, 126);
-		StartPage.add(btnMakeModule);
+		btnMakeModule.setBackground(SystemColor.info);
+		btnMakeModule.setBounds(1237, 592, 417, 100);
+		BG.add(btnMakeModule);
 		try {
 			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(70f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")));
-		} catch(IOException | FontFormatException e){
-			
+		} catch (IOException | FontFormatException e) {
+
 		}
 		btnMakeModule.setFont(BlackBrutal);
 
 		JButton btnTest = new JButton("Test");
 		btnTest.setFont(null);
 		btnTest.setBorder(null);
-		btnTest.setBackground(Color.WHITE);
+		btnTest.setBackground(SystemColor.info);
 		btnTest.setBounds(1523, 794, 200, 100);
-		StartPage.add(btnTest);
+		BG.add(btnTest);
 		try {
 			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(70f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")));
-		} catch(IOException | FontFormatException e){
-			
+		} catch (IOException | FontFormatException e) {
+
 		}
 		btnTest.setFont(BlackBrutal);
 		JPanel TestPage = new JPanel();
@@ -131,16 +133,14 @@ public class Main {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				StartPage.setVisible(false);
+				BG.setVisible(false);
 				TestPage.setVisible(true);
 			}
 		});
 
-		
-
 		JLabel lblTest = new JLabel("Test");
 		lblTest.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTest.setBounds(695, 97, 560, 130);
+		lblTest.setBounds(695, 97, 560, 170);
 		TestPage.add(lblTest);
 		lblTest.setFont(BlackBrutal);
 		TestPage.setVisible(false);
@@ -216,3 +216,27 @@ public class Main {
 
 	}
 }
+
+class ImagePanel extends JPanel {
+	private Image img;
+
+	public ImagePanel(Image img) {
+		this.img = img;
+		setSize(new Dimension(img.getWidth(null), img.getHeight(null)));
+		setPreferredSize(new Dimension(img.getWidth(null),img.getHeight(null)));
+		setLayout(null);
+	}
+	
+	public int getWidth() {
+		return img.getWidth(null);
+	}
+	
+	public int getHeight() {
+		return img.getHeight(null);
+	}
+
+	public void paintComponent(Graphics g) {
+		g.drawImage(img, 0, 0, null);
+	}
+}
+
