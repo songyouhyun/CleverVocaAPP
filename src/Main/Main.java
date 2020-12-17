@@ -8,6 +8,7 @@ import java.awt.FontFormatException;
 import java.awt.Graphics;
 import java.awt.GraphicsEnvironment;
 import java.awt.Image;
+import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -21,7 +22,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
-import java.awt.SystemColor;
 
 public class Main {
 
@@ -98,7 +98,7 @@ public class Main {
 		btnMakeModule.setFont(null);
 		btnMakeModule.setBorder(null);
 		btnMakeModule.setBackground(SystemColor.info);
-		btnMakeModule.setBounds(1237, 592, 417, 100);
+		btnMakeModule.setBounds(1237, 592, 330, 66);
 		BG.add(btnMakeModule);
 		try {
 			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(70f);
@@ -113,7 +113,7 @@ public class Main {
 		btnTest.setFont(null);
 		btnTest.setBorder(null);
 		btnTest.setBackground(SystemColor.info);
-		btnTest.setBounds(1523, 794, 200, 100);
+		btnTest.setBounds(1523, 794, 135, 70);
 		BG.add(btnTest);
 		try {
 			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(70f);
@@ -123,12 +123,11 @@ public class Main {
 
 		}
 		btnTest.setFont(BlackBrutal);
-		JPanel TestPage = new JPanel();
-		TestPage.setBackground(Color.WHITE);
-		TestPage.setBounds(0, 0, 1920, 1080);
+		
+		
+		ImagePanel TestPage = new ImagePanel(new ImageIcon("./image/BackgroundIMG(FIX).jpg").getImage());
 		frame.getContentPane().add(TestPage);
-		TestPage.setLayout(null);
-
+		
 		btnTest.addActionListener(new ActionListener() {
 
 			@Override
