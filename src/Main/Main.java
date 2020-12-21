@@ -57,15 +57,33 @@ public class Main {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		ImagePanel BG = new ImagePanel(new ImageIcon("./image/BackgroundIMG(FIX).jpg").getImage());
-		frame.setSize(BG.getWidth(),BG.getHeight());
 		frame.setBounds(100, 100, 1920, 1080);
-		frame.getContentPane().add(BG);
 		frame.setLocationRelativeTo(null);
-		frame.getContentPane().setLayout(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		ImagePanel BG = new ImagePanel(new ImageIcon("./image/BackgroundIMG(FIX).jpg").getImage());
+		frame.getContentPane().add(BG);
+		BG.setLayout(null);
+
+		ImagePanel WriteTestPage = new ImagePanel(new ImageIcon("./image/BackgroundIMG(FIX).jpg").getImage());
+		frame.getContentPane().add(WriteTestPage);
+		WriteTestPage.setVisible(false);
+		WriteTestPage.setLayout(null);
+
+		ImagePanel TestPage = new ImagePanel(new ImageIcon("./image/BackgroundIMG(FIX).jpg").getImage());
+		frame.getContentPane().add(TestPage);
+		TestPage.setVisible(false);
+		TestPage.setLayout(null);
 		
+		JPanel lineborderPanel = new JPanel();
+		lineborderPanel.setBorder(new LineBorder(new Color(0, 0, 0), 10, true));
+		lineborderPanel.setBounds(290, 290, 1370, 700);
+		WriteTestPage.add(lineborderPanel);
+		lineborderPanel.setLayout(null);
+
+
+
+
 		JLabel lblTitle = new JLabel("Clever Voca", SwingConstants.CENTER);
 		lblTitle.setFont(null);
 		lblTitle.setBounds(156, 169, 690, 310);
@@ -95,7 +113,6 @@ public class Main {
 		btnSearchModule.setFont(BlackBrutal);
 
 		JButton btnMakeModule = new JButton("Make Module");
-		btnMakeModule.setFont(null);
 		btnMakeModule.setBorder(null);
 		btnMakeModule.setBackground(SystemColor.info);
 		btnMakeModule.setBounds(1237, 592, 330, 66);
@@ -123,11 +140,7 @@ public class Main {
 
 		}
 		btnTest.setFont(BlackBrutal);
-		
-		
-		ImagePanel TestPage = new ImagePanel(new ImageIcon("./image/BackgroundIMG(FIX).jpg").getImage());
-		frame.getContentPane().add(TestPage);
-		
+
 		btnTest.addActionListener(new ActionListener() {
 
 			@Override
@@ -141,10 +154,8 @@ public class Main {
 		lblTest.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTest.setBounds(695, 97, 560, 170);
 		TestPage.add(lblTest);
-		lblTest.setFont(BlackBrutal);
-		TestPage.setVisible(false);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(170f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(200f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")));
 		} catch (IOException | FontFormatException e) {
@@ -152,17 +163,45 @@ public class Main {
 		}
 		lblTest.setFont(BlackBrutal);
 
-		JPanel WriteTestPage = new JPanel();
-		WriteTestPage.setBounds(0, 0, 1920, 1080);
-		frame.getContentPane().add(WriteTestPage);
-		WriteTestPage.setLayout(null);
-		WriteTestPage.setVisible(false);
+		
+		
+		JButton btnCard = new JButton("Card");
+		btnCard.setHorizontalAlignment(SwingConstants.CENTER);
+		btnCard.setBackground(SystemColor.info);
+		btnCard.setBounds(325,500,320,170);
+		btnCard.setBorder(null); 
+		TestPage.add(btnCard);
+		try {
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(130f);
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")));
+		} catch (IOException | FontFormatException e) {
 
-		JPanel lineborderPanel = new JPanel();
-		lineborderPanel.setBorder(new LineBorder(new Color(0, 0, 0), 20, true));
-		lineborderPanel.setBounds(290, 290, 1370, 700);
-		WriteTestPage.add(lineborderPanel);
-		lineborderPanel.setLayout(null);
+		}
+		btnCard.setFont(BlackBrutal);
+		
+		JButton btnWrite = new JButton("Write");
+		btnWrite.setHorizontalAlignment(SwingConstants.CENTER);
+		btnWrite.setBackground(SystemColor.info);
+		btnWrite.setBounds(1300,500,370,165);
+		btnWrite.setBorder(null);
+		TestPage.add(btnWrite);
+		try {
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(130f);
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")));
+		} catch (IOException | FontFormatException e) {
+
+		}
+		btnWrite.setFont(BlackBrutal);
+		btnWrite.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				TestPage.setVisible(false);
+				WriteTestPage.setVisible(true);
+			}
+		});
 
 		JLabel WritetestWord = new JLabel("clever");
 		WritetestWord.setHorizontalAlignment(SwingConstants.CENTER);
@@ -205,14 +244,6 @@ public class Main {
 		WriteTestPage.add(Writetestlabel);
 		Writetestlabel.setFont(BlackBrutal);
 
-		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(70f);
-			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")));
-		} catch (IOException | FontFormatException e) {
-
-		}
-
 	}
 }
 
@@ -222,14 +253,14 @@ class ImagePanel extends JPanel {
 	public ImagePanel(Image img) {
 		this.img = img;
 		setSize(new Dimension(img.getWidth(null), img.getHeight(null)));
-		setPreferredSize(new Dimension(img.getWidth(null),img.getHeight(null)));
+		setPreferredSize(new Dimension(img.getWidth(null), img.getHeight(null)));
 		setLayout(null);
 	}
-	
+
 	public int getWidth() {
 		return img.getWidth(null);
 	}
-	
+
 	public int getHeight() {
 		return img.getHeight(null);
 	}
