@@ -14,13 +14,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
+import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.BorderLayout;
 
@@ -305,6 +299,32 @@ public class Main {
 		}
 		SearchModulePage.add(SearchModulelabel);
 		SearchModulelabel.setFont(BlackBrutal);
+
+		JTextArea SearchTxt = new JTextArea();
+		SearchTxt.setBounds(570,270,970,70);
+		SearchTxt.setFont(BlackBrutal);
+		try {
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(80f);
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")));
+		} catch (IOException | FontFormatException e) {
+
+		}
+		SearchModulePage.add(SearchTxt);
+		SearchTxt.setFont(BlackBrutal);
+
+		JButton Searchbtn = new JButton();
+		Searchbtn.setBounds(1540,270,70,70);
+		Searchbtn.setFont(BlackBrutal);
+		try {
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(80f);
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")));
+		} catch (IOException | FontFormatException e) {
+
+		}
+		SearchModulePage.add(Searchbtn);
+		Searchbtn.setFont(BlackBrutal);
 
 	}
 }
