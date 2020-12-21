@@ -61,7 +61,7 @@ public class Main {
 		frame.setBounds(100, 100, 1920, 1080);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+		
 		ImagePanel BG = new ImagePanel(new ImageIcon("./image/BackgroundIMG(FIX).jpg").getImage());
 		frame.getContentPane().add(BG);
 		BG.setLayout(null);
@@ -186,7 +186,7 @@ public class Main {
 		}
 		lblTest.setFont(BlackBrutal);
 
-
+		
 		JButton btnCard = new JButton("Card");
 		btnCard.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
