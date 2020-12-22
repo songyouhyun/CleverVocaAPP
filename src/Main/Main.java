@@ -55,6 +55,13 @@ public class Main {
 		frame.setBounds(100, 100, 1920, 1080);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		String [] headings = new String[] {"Number", "Name","",""};
+		Object [] [] data = new Object[][] {
+			{"1","TOEIC 700점 영단어", "Start!", "BookMark"},
+			{"2","TOEIC 800점 영단어", "Start!", "BookMark"},
+			{"3","TOEIC 850점 영단어", "Start!", "BookMark"},
+			{"4","TOEIC 900점 영단어", "Start!", "BookMark"}
+		};
 		
 		ImagePanel BG = new ImagePanel(new ImageIcon("./image/BackgroundIMG(FIX).jpg").getImage());
 		frame.getContentPane().add(BG);
@@ -93,6 +100,14 @@ public class Main {
 		lineborderPanel2.setBounds(290, 290, 1370, 700);
 		CardTestPage.add(lineborderPanel2);
 		lineborderPanel2.setLayout(null);
+
+		JPanel lineborderPanel3 = new JPanel();
+		lineborderPanel3.setBorder(new LineBorder(new Color(0,0,0),10,true));
+		lineborderPanel3.setBounds(445,400,1050,500);
+		SearchModulePage.add(lineborderPanel3);
+		lineborderPanel3.setLayout(null);
+
+
 
 		JLabel lblTitle = new JLabel("Clever Voca", SwingConstants.CENTER);
 		lblTitle.setFont(null);
@@ -320,6 +335,10 @@ public class Main {
 		SearchModulePage.add(Searchbtn);
 		Searchbtn.setFont(BlackBrutal);
 
+		JTable table = new JTable(data,headings);
+		table.setPreferredScrollableViewportSize(new Dimension(560,170));
+		table.setFillsViewportHeight(true);
+		lineborderPanel3.add(table);
 	}
 }
 
