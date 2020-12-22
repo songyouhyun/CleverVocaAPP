@@ -288,7 +288,7 @@ public class Main {
 
 		JLabel SearchModulelabel = new JLabel("SearchModule");
 		SearchModulelabel.setHorizontalAlignment(SwingConstants.CENTER);
-		SearchModulelabel.setBounds(695, 97, 700, 130);
+		SearchModulelabel.setBounds(625, 97, 700, 130);
 		SearchModulelabel.setFont(BlackBrutal);
 		try {
 			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(100f);
@@ -301,7 +301,7 @@ public class Main {
 		SearchModulelabel.setFont(BlackBrutal);
 
 		JTextArea SearchTxt = new JTextArea();
-		SearchTxt.setBounds(570,270,970,70);
+		SearchTxt.setBounds(450,270,970,70);
 		SearchTxt.setFont(BlackBrutal);
 		try {
 			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(80f);
@@ -314,7 +314,7 @@ public class Main {
 		SearchTxt.setFont(BlackBrutal);
 
 		JButton Searchbtn = new JButton();
-		Searchbtn.setBounds(1540,270,70,70);
+		Searchbtn.setBounds(1420,270,70,70);
 		Searchbtn.setFont(BlackBrutal);
 		try {
 			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(80f);
