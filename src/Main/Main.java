@@ -314,15 +314,9 @@ public class Main {
 		SearchTxt.setFont(BlackBrutal);
 
 		JButton Searchbtn = new JButton();
+		Searchbtn.setIcon(new ImageIcon("image/Search Button image.jpg"));
+		Searchbtn.setSelectedIcon(new ImageIcon("image/Search Button image.jpg"));
 		Searchbtn.setBounds(1420,270,70,70);
-		Searchbtn.setFont(BlackBrutal);
-		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(80f);
-			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")));
-		} catch (IOException | FontFormatException e) {
-
-		}
 		SearchModulePage.add(Searchbtn);
 		Searchbtn.setFont(BlackBrutal);
 
