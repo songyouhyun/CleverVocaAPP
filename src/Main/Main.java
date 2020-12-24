@@ -88,6 +88,11 @@ public class Main {
 		SearchModulePage.setVisible(false);
 		SearchModulePage.setLayout(null);
 
+		ImagePanel MakeModulePage = new ImagePanel(new ImageIcon("./image/BackgroundIMG(FIX).jpg").getImage());
+		frame.getContentPane().add(MakeModulePage);
+		MakeModulePage.setVisible(false);
+		MakeModulePage.setLayout(null);
+
 
 		JPanel lineborderPanel1 = new JPanel();
 		lineborderPanel1.setBorder(new LineBorder(new Color(0, 0, 0), 10, true));
@@ -106,6 +111,12 @@ public class Main {
 		lineborderPanel3.setBounds(445,400,1050,500);
 		SearchModulePage.add(lineborderPanel3);
 		lineborderPanel3.setLayout(null);
+
+		JPanel lineborderPanel4 = new JPanel();
+		lineborderPanel4.setBorder(new LineBorder(new Color(0,0,0),20,true));
+		lineborderPanel4.setBounds(290, 290, 1370, 700);
+		MakeModulePage.add(lineborderPanel4);
+		lineborderPanel4.setLayout(null);
 
 
 
@@ -157,6 +168,15 @@ public class Main {
 
 		}
 		btnMakeModule.setFont(BlackBrutal);
+
+		btnMakeModule.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				MakeModulePage.setVisible(true);
+				BG.setVisible(false);
+			}
+		});
 
 		JButton btnTest = new JButton("Test");
 		btnTest.setFont(null);
@@ -315,6 +335,20 @@ public class Main {
 		SearchModulePage.add(SearchModulelabel);
 		SearchModulelabel.setFont(BlackBrutal);
 
+		JLabel MakeModulelabel = new JLabel("MakeModule");
+		MakeModulelabel.setHorizontalAlignment(SwingConstants.CENTER);
+		MakeModulelabel.setBounds(625, 97, 700, 130);
+		MakeModulelabel.setFont(BlackBrutal);
+		try {
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")).deriveFont(100f);
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("BlackBrutal.ttf")));
+		} catch (IOException | FontFormatException e) {
+
+		}
+		MakeModulePage.add(MakeModulelabel);
+		MakeModulelabel.setFont(BlackBrutal);
+
 		JTextArea SearchTxt = new JTextArea();
 		SearchTxt.setBounds(450,270,970,70);
 		SearchTxt.setFont(BlackBrutal);
@@ -390,6 +424,19 @@ public class Main {
 			public void actionPerformed(ActionEvent e) {
 				WriteTestPage.setVisible(false);
 				TestPage.setVisible(true);
+			}
+		});
+
+		JButton BackKey5 = new JButton();
+		BackKey5.setIcon(new ImageIcon("D:\\GSMFestival\\CleverVocaApp\\image\\BackKey.png"));
+		BackKey5.setBounds(12, 12, 130, 78);
+		MakeModulePage.add(BackKey5);
+		BackKey5.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				MakeModulePage.setVisible(false);
+				BG.setVisible(true);
 			}
 		});
 	}
