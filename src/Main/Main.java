@@ -55,14 +55,14 @@ public class Main {
 		frame.setBounds(100, 100, 1920, 1080);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		String [] headings = new String[] {"Number", "Name","",""};
-		Object [] [] data = new Object[][] {
-			{"1","TOEIC 700점 영단어", "Start!", "BookMark"},
-			{"2","TOEIC 800점 영단어", "Start!", "BookMark"},
-			{"3","TOEIC 850점 영단어", "Start!", "BookMark"},
-			{"4","TOEIC 900점 영단어", "Start!", "BookMark"}
+		String [] headings = {"Number", "Name","none","none"};
+		Object [] [] data = {
+				{"1","TOEIC 700점 영단어", "Start!", "BookMark"},
+				{"2","TOEIC 800점 영단어", "Start!", "BookMark"},
+				{"3","TOEIC 850점 영단어", "Start!", "BookMark"},
+				{"4","TOEIC 900점 영단어", "Start!", "BookMark"},
 		};
-		
+
 		ImagePanel BG = new ImagePanel(new ImageIcon("./image/BackgroundIMG(FIX).jpg").getImage());
 		frame.getContentPane().add(BG);
 		BG.setLayout(null);
@@ -102,7 +102,7 @@ public class Main {
 		lineborderPanel2.setLayout(null);
 
 		JPanel lineborderPanel3 = new JPanel();
-		lineborderPanel3.setBorder(new LineBorder(new Color(0,0,0),10,true));
+		lineborderPanel3.setBorder(new LineBorder(new Color(0,0,0),20,true));
 		lineborderPanel3.setBounds(445,400,1050,500);
 		SearchModulePage.add(lineborderPanel3);
 		lineborderPanel3.setLayout(null);
@@ -195,7 +195,7 @@ public class Main {
 		}
 		lblTest.setFont(BlackBrutal);
 
-		
+
 		JButton btnCard = new JButton("Card");
 		btnCard.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -329,16 +329,69 @@ public class Main {
 		SearchTxt.setFont(BlackBrutal);
 
 		JButton Searchbtn = new JButton();
-		Searchbtn.setIcon(new ImageIcon("image/Search Button image.jpg"));
-		Searchbtn.setSelectedIcon(new ImageIcon("image/Search Button image.jpg"));
+		Searchbtn.setIcon(new ImageIcon("D:\\GSMFestival\\CleverVocaApp\\image\\Search_Button_image.jpg"));
 		Searchbtn.setBounds(1420,270,70,70);
 		SearchModulePage.add(Searchbtn);
-		Searchbtn.setFont(BlackBrutal);
 
 		JTable table = new JTable(data,headings);
-		table.setPreferredScrollableViewportSize(new Dimension(560,170));
+		table.setSize(1010, 460);
+		table.setLocation(20, 21);
 		table.setFillsViewportHeight(true);
 		lineborderPanel3.add(table);
+		table.setFillsViewportHeight(true);
+//		lineborderPanel3.add(new JScrollPane(table));
+
+		JButton BackKey = new JButton();
+		BackKey.setIcon(new ImageIcon("D:\\GSMFestival\\CleverVocaApp\\image\\BackKey.png"));
+		BackKey.setBounds(12, 12, 130, 78);
+		SearchModulePage.add(BackKey);
+		BackKey.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				SearchModulePage.setVisible(false);
+				BG.setVisible(true);
+			}
+		});
+
+		JButton BackKey2 = new JButton();
+		BackKey2.setIcon(new ImageIcon("D:\\GSMFestival\\CleverVocaApp\\image\\BackKey.png"));
+		BackKey2.setBounds(12, 12, 130, 78);
+		TestPage.add(BackKey2);
+		BackKey2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				TestPage.setVisible(false);
+				BG.setVisible(true);
+			}
+		});
+
+		JButton BackKey3 = new JButton();
+		BackKey3.setIcon(new ImageIcon("D:\\GSMFestival\\CleverVocaApp\\image\\BackKey.png"));
+		BackKey3.setBounds(12, 12, 130, 78);
+		CardTestPage.add(BackKey3);
+		BackKey3.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				CardTestPage.setVisible(false);
+				TestPage.setVisible(true);
+			}
+		});
+
+		JButton BackKey4 = new JButton();
+		BackKey4.setIcon(new ImageIcon("D:\\GSMFestival\\CleverVocaApp\\image\\BackKey.png"));
+		BackKey4.setBounds(12, 12, 130, 78);
+		WriteTestPage.add(BackKey4);
+		BackKey4.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				WriteTestPage.setVisible(false);
+				TestPage.setVisible(true);
+			}
+		});
 	}
 }
 
