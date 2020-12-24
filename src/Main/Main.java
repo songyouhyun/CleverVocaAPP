@@ -62,6 +62,7 @@ public class Main {
 				{"3","TOEIC 850점 토익 영단어", "Start!", "BookMark"},
 				{"4","TOEIC 900점 토익 영단어", "Start!", "BookMark"},
 		};
+		String fonts = new String("Typo_DonQuixoteL.ttf");
 
 		ImagePanel BG = new ImagePanel(new ImageIcon("./image/BackgroundIMG(FIX).jpg").getImage());
 		frame.getContentPane().add(BG);
@@ -125,9 +126,9 @@ public class Main {
 		lblTitle.setBounds(156, 169, 750, 310);
 		BG.add(lblTitle);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")).deriveFont(130f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Typo_DonQuixoteL.ttf")));
 		} catch (IOException | FontFormatException e) {
 
 		}
@@ -140,9 +141,9 @@ public class Main {
 		btnSearchModule.setBounds(1041, 420, 480, 67);
 		BG.add(btnSearchModule);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")).deriveFont(70f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(70f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
 
 		}
@@ -161,9 +162,9 @@ public class Main {
 		btnMakeModule.setBounds(1237, 592, 480, 67);
 		BG.add(btnMakeModule);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")).deriveFont(70f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(70f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
 
 		}
@@ -185,9 +186,9 @@ public class Main {
 		btnTest.setBounds(1523, 794, 200, 70);
 		BG.add(btnTest);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")).deriveFont(70f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(70f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
 
 		}
@@ -207,9 +208,9 @@ public class Main {
 		lblTest.setBounds(695, 97, 560, 170);
 		TestPage.add(lblTest);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")).deriveFont(200f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(200f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
 
 		}
@@ -227,9 +228,9 @@ public class Main {
 		btnCard.setBorder(null);
 		TestPage.add(btnCard);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")).deriveFont(130f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
 
 		}
@@ -250,9 +251,9 @@ public class Main {
 		btnWrite.setBorder(null);
 		TestPage.add(btnWrite);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")).deriveFont(130f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
 
 		}
@@ -271,9 +272,9 @@ public class Main {
 		WritetestWord.setBounds(409, 97, 560, 130);
 		lineborderPanel1.add(WritetestWord);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")).deriveFont(100f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(100f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
 
 		}
@@ -285,9 +286,9 @@ public class Main {
 		lineborderPanel1.add(txtWriteHere);
 		txtWriteHere.setColumns(10);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")).deriveFont(130f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
 
 		}
@@ -298,9 +299,9 @@ public class Main {
 		Writetestlabel.setBounds(695, 97, 560, 130);
 		Writetestlabel.setFont(BlackBrutal);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")).deriveFont(130f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
 
 		}
@@ -312,9 +313,9 @@ public class Main {
 		Cardtestlabel.setBounds(695, 97, 560, 130);
 		Cardtestlabel.setFont(BlackBrutal);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")).deriveFont(130f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
 
 		}
@@ -326,9 +327,9 @@ public class Main {
 		SearchModulelabel.setBounds(625, 97, 700, 130);
 		SearchModulelabel.setFont(BlackBrutal);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")).deriveFont(100f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(100f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
 
 		}
@@ -340,7 +341,7 @@ public class Main {
 		MakeModulelabel.setBounds(625, 97, 700, 130);
 		MakeModulelabel.setFont(BlackBrutal);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")).deriveFont(100f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(100f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")));
 		} catch (IOException | FontFormatException e) {
@@ -353,9 +354,9 @@ public class Main {
 		SearchTxt.setBounds(450,270,970,70);
 		SearchTxt.setFont(BlackBrutal);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")).deriveFont(80f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(80f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Typo_CrayonM.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
 
 		}
