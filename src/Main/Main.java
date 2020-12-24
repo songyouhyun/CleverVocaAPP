@@ -14,15 +14,35 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
-import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
-import java.awt.BorderLayout;
+import javax.swing.table.DefaultTableModel;
 
 public class Main {
 
 	private JFrame frame;
 	Font BlackBrutal;
 	private JTextField txtWriteHere;
+	private JTextField InsertMdName;
+	private JTextField InsertWordEn01;
+	private JTextField InsertWordKo01;
+	private JTextField InsertWordEn02;
+	private JTextField InsertWordEn03;
+	private JTextField InsertWordEn04;
+	private JTextField InsertWordKo02;
+	private JTextField InsertWordKo03;
+	private JTextField InsertWordKo00;
+
+
+
 
 	/**
 	 * Launch the application.
@@ -55,6 +75,10 @@ public class Main {
 		frame.setBounds(100, 100, 1920, 1080);
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		String fonts = new String ("Typo_DonQuixoteL.ttf");
+		
+		String BGlink = new String("./image/BackgroundIMG(FIX).jpg");
 		String [] headings = {"Number", "Name","none","none"};
 		Object [] [] data = {
 				{"1","TOEIC 700점 토익 영단어", "Start!", "BookMark"},
@@ -62,34 +86,33 @@ public class Main {
 				{"3","TOEIC 850점 토익 영단어", "Start!", "BookMark"},
 				{"4","TOEIC 900점 토익 영단어", "Start!", "BookMark"},
 		};
-		String fonts = new String("Typo_DonQuixoteL.ttf");
 
-		ImagePanel BG = new ImagePanel(new ImageIcon("./image/BackgroundIMG(FIX).jpg").getImage());
+		ImagePanel BG = new ImagePanel(new ImageIcon(BGlink).getImage());
 		frame.getContentPane().add(BG);
 		BG.setLayout(null);
 
-		ImagePanel WriteTestPage = new ImagePanel(new ImageIcon("./image/BackgroundIMG(FIX).jpg").getImage());
+		ImagePanel WriteTestPage = new ImagePanel(new ImageIcon(BGlink).getImage());
 		frame.getContentPane().add(WriteTestPage);
 		WriteTestPage.setVisible(false);
 		WriteTestPage.setLayout(null);
 
-		ImagePanel TestPage = new ImagePanel(new ImageIcon("./image/BackgroundIMG(FIX).jpg").getImage());
+		ImagePanel TestPage = new ImagePanel(new ImageIcon(BGlink).getImage());
 		frame.getContentPane().add(TestPage);
 		TestPage.setVisible(false);
 		TestPage.setLayout(null);
 
 
-		ImagePanel CardTestPage = new ImagePanel(new ImageIcon("./image/BackgroundIMG(FIX).jpg").getImage());
+		ImagePanel CardTestPage = new ImagePanel(new ImageIcon(BGlink).getImage());
 		frame.getContentPane().add(CardTestPage);
 		CardTestPage.setVisible(false);
 		CardTestPage.setLayout(null);
 
-		ImagePanel SearchModulePage = new ImagePanel(new ImageIcon("./image/BackgroundIMG(FIX).jpg").getImage());
+		ImagePanel SearchModulePage = new ImagePanel(new ImageIcon(BGlink).getImage());
 		frame.getContentPane().add(SearchModulePage);
 		SearchModulePage.setVisible(false);
 		SearchModulePage.setLayout(null);
 
-		ImagePanel MakeModulePage = new ImagePanel(new ImageIcon("./image/BackgroundIMG(FIX).jpg").getImage());
+		ImagePanel MakeModulePage = new ImagePanel(new ImageIcon(BGlink).getImage());
 		frame.getContentPane().add(MakeModulePage);
 		MakeModulePage.setVisible(false);
 		MakeModulePage.setLayout(null);
@@ -115,9 +138,58 @@ public class Main {
 
 		JPanel lineborderPanel4 = new JPanel();
 		lineborderPanel4.setBorder(new LineBorder(new Color(0,0,0),20,true));
-		lineborderPanel4.setBounds(290, 290, 1370, 700);
+		lineborderPanel4.setBounds(204, 170, 1600, 830);
 		MakeModulePage.add(lineborderPanel4);
 		lineborderPanel4.setLayout(null);
+		
+		InsertMdName = new JTextField();
+		InsertMdName.setBounds(50, 50, 1100, 100);
+		lineborderPanel4.add(InsertMdName);
+		InsertMdName.setColumns(10);
+		
+		InsertWordEn01 = new JTextField();
+		InsertWordEn01.setBounds(50, 200, 500, 100);
+		lineborderPanel4.add(InsertWordEn01);
+		InsertWordEn01.setColumns(10);
+		
+		InsertWordEn02 = new JTextField();
+		InsertWordEn02.setColumns(10);
+		InsertWordEn02.setBounds(50, 350, 500, 100);
+		lineborderPanel4.add(InsertWordEn02);
+		
+		InsertWordEn03 = new JTextField();
+		InsertWordEn03.setColumns(10);
+		InsertWordEn03.setBounds(50, 500, 500, 100);
+		lineborderPanel4.add(InsertWordEn03);
+		
+		InsertWordEn04 = new JTextField();
+		InsertWordEn04.setColumns(10);
+		InsertWordEn04.setBounds(50, 650, 500, 100);
+		lineborderPanel4.add(InsertWordEn04);
+		
+		InsertWordKo01 = new JTextField();
+		InsertWordKo01.setColumns(10);
+		InsertWordKo01.setBounds(650, 350, 500, 100);
+		lineborderPanel4.add(InsertWordKo01);
+		
+		InsertWordKo02 = new JTextField();
+		InsertWordKo02.setColumns(10);
+		InsertWordKo02.setBounds(650, 500, 500, 100);
+		lineborderPanel4.add(InsertWordKo02);
+		
+		InsertWordKo03 = new JTextField();
+		InsertWordKo03.setColumns(10);
+		InsertWordKo03.setBounds(650, 650, 500, 100);
+		lineborderPanel4.add(InsertWordKo03);
+		
+		InsertWordKo00 = new JTextField();
+		InsertWordKo00.setColumns(10);
+		InsertWordKo00.setBounds(650, 200, 500, 100);
+		lineborderPanel4.add(InsertWordKo00);
+		
+		JButton MdSavebtn = new JButton("Save");
+		MdSavebtn.setBounds(1200, 650, 350, 100);
+		lineborderPanel4.add(MdSavebtn);
 
 
 
@@ -128,16 +200,17 @@ public class Main {
 		try {
 			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Typo_DonQuixoteL.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
 
 		}
 		lblTitle.setFont(BlackBrutal);
-
+		
 		JButton btnSearchModule = new JButton("Search Module");
 		btnSearchModule.setFont(null);
 		btnSearchModule.setBorder(null);
 		btnSearchModule.setBackground(SystemColor.info);
+		btnSearchModule.setFocusPainted(false);
 		btnSearchModule.setBounds(1041, 420, 480, 67);
 		BG.add(btnSearchModule);
 		try {
@@ -160,6 +233,7 @@ public class Main {
 		btnMakeModule.setBorder(null);
 		btnMakeModule.setBackground(SystemColor.info);
 		btnMakeModule.setBounds(1237, 592, 480, 67);
+		btnMakeModule.setFocusPainted(false);
 		BG.add(btnMakeModule);
 		try {
 			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(70f);
@@ -184,6 +258,7 @@ public class Main {
 		btnTest.setBorder(null);
 		btnTest.setBackground(SystemColor.info);
 		btnTest.setBounds(1523, 794, 200, 70);
+		btnTest.setFocusPainted(false);
 		BG.add(btnTest);
 		try {
 			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(70f);
@@ -338,7 +413,7 @@ public class Main {
 
 		JLabel MakeModulelabel = new JLabel("MakeModule");
 		MakeModulelabel.setHorizontalAlignment(SwingConstants.CENTER);
-		MakeModulelabel.setBounds(625, 97, 700, 130);
+		MakeModulelabel.setBounds(625, 30, 700, 130);
 		MakeModulelabel.setFont(BlackBrutal);
 		try {
 			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(100f);
@@ -350,7 +425,7 @@ public class Main {
 		MakeModulePage.add(MakeModulelabel);
 		MakeModulelabel.setFont(BlackBrutal);
 
-		JTextArea SearchTxt = new JTextArea();
+		JTextArea SearchTxt =  new JTextArea();
 		SearchTxt.setBounds(450,270,970,70);
 		SearchTxt.setFont(BlackBrutal);
 		try {
@@ -364,17 +439,38 @@ public class Main {
 		SearchTxt.setFont(BlackBrutal);
 
 		JButton Searchbtn = new JButton();
-		Searchbtn.setIcon(new ImageIcon("D:\\GSMFestival\\CleverVocaApp\\image\\Search_Button_image.jpg"));
+		Searchbtn.setIcon(new ImageIcon("D:\\GSMFestival\\CleverVocaApp\\image\\Search Button image.jpg"));
 		Searchbtn.setBounds(1420,270,70,70);
 		SearchModulePage.add(Searchbtn);
 
 		JTable table = new JTable(data,headings);
+		table.setBackground(new Color(255, 255, 255));
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{"1", "TOEIC 700\uC810 \uD1A0\uC775 \uC601\uB2E8\uC5B4", "Start!", "BookMark"},
+				{"2", "TOEIC 800\uC810 \uD1A0\uC775 \uC601\uB2E8\uC5B4", "Start!", "BookMark"},
+				{"3", "TOEIC 850\uC810 \uD1A0\uC775 \uC601\uB2E8\uC5B4", "Start!", "BookMark"},
+				{"4", "TOEIC 900\uC810 \uD1A0\uC775 \uC601\uB2E8\uC5B4", "Start!", "BookMark"},
+			},
+			new String[] {
+				"Number", "Name", "none", "none"
+			}
+		));
+		table.getColumnModel().getColumn(1).setPreferredWidth(160);
 		table.setSize(1010, 460);
 		table.setLocation(20, 21);
 		table.setFillsViewportHeight(true);
 		lineborderPanel3.add(table);
 		table.setFillsViewportHeight(true);
 //		lineborderPanel3.add(new JScrollPane(table));
+		try {
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(25f);
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
+		} catch (IOException | FontFormatException e) {
+
+		}
+		table.setFont(BlackBrutal);
 
 		JButton BackKey = new JButton();
 		BackKey.setIcon(new ImageIcon("D:\\GSMFestival\\CleverVocaApp\\image\\BackKey.png"));
