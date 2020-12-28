@@ -123,25 +123,19 @@ public class Main {
 
 
 		JPanel lineborderPanel1 = new JPanel();
-		lineborderPanel1.setBorder(new LineBorder(new Color(0, 0, 0), 10, true));
+		lineborderPanel1.setBorder(new LineBorder(Color.LIGHT_GRAY, 10, true));
 		lineborderPanel1.setBounds(290, 290, 1370, 700);
 		WriteTestPage.add(lineborderPanel1);
 		lineborderPanel1.setLayout(null);
 
-		JPanel lineborderPanel2 = new JPanel();
-		lineborderPanel2.setBorder(new LineBorder(new Color(0, 0, 0), 10, true));
-		lineborderPanel2.setBounds(290, 290, 1370, 700);
-		CardTestPage.add(lineborderPanel2);
-		lineborderPanel2.setLayout(null);
-
 		JPanel lineborderPanel3 = new JPanel();
-		lineborderPanel3.setBorder(new LineBorder(new Color(0,0,0),20,true));
+		lineborderPanel3.setBorder(new LineBorder(Color.LIGHT_GRAY,20,true));
 		lineborderPanel3.setBounds(445,400,1050,500);
 		SearchModulePage.add(lineborderPanel3);
 		lineborderPanel3.setLayout(null);
 
 		JPanel lineborderPanel4 = new JPanel();
-		lineborderPanel4.setBorder(new LineBorder(new Color(0,0,0),20,true));
+		lineborderPanel4.setBorder(new LineBorder(Color.LIGHT_GRAY,20,true));
 		lineborderPanel4.setBounds(150, 170, 1600, 830);
 		MakeModulePage.add(lineborderPanel4);
 		lineborderPanel4.setLayout(null);
@@ -188,7 +182,7 @@ public class Main {
 		InsertWordEn03 = new JTextField();
 		InsertWordEn03.setColumns(10);
 		InsertWordEn03.setBounds(50, 500, 500, 100);
-		InsertWordEn03.add(InsertWordEn03);
+		lineborderPanel4.add(InsertWordEn03);
 		try {
 			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -274,6 +268,20 @@ public class Main {
 
 		}
 		MdSavebtn.setFont(BlackBrutal);
+		
+				JPanel lineborderPanel2 = new JPanel();
+				lineborderPanel2.setBounds(304, 200, 1300, 700);
+				CardTestPage.add(lineborderPanel2);
+				lineborderPanel2.setBorder(new LineBorder(Color.LIGHT_GRAY, 10, true));
+				lineborderPanel2.setLayout(null);
+				
+				JPanel WordCardPanel = new JPanel();
+				WordCardPanel.setBorder(new LineBorder(new Color(192, 192, 192), 10, true));
+				WordCardPanel.setBounds(50, 50, 500, 600);
+				lineborderPanel2.add(WordCardPanel);
+				
+				JLabel lblNewLabel = new JLabel("New label");
+				WordCardPanel.add(lblNewLabel);
 
 
 		JLabel lblTitle = new JLabel("Clever Voca", SwingConstants.CENTER);
@@ -468,7 +476,7 @@ public class Main {
 
 		JLabel Cardtestlabel = new JLabel("Card Test");
 		Cardtestlabel.setHorizontalAlignment(SwingConstants.CENTER);
-		Cardtestlabel.setBounds(695, 97, 560, 130);
+		Cardtestlabel.setBounds(695, 50, 560, 130);
 		Cardtestlabel.setFont(BlackBrutal);
 		try {
 			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
