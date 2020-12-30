@@ -477,7 +477,7 @@ public class Main {
 		WriteTestPage.add(Writetestlabel);
 		Writetestlabel.setFont(BlackBrutal);
 
-		JLabel Cardtestlabel = new JLabel("Card Test");
+		JLabel Cardtestlabel = new JLabel("CardTestlabel");
 		Cardtestlabel.setHorizontalAlignment(SwingConstants.CENTER);
 		Cardtestlabel.setBounds(695, 50, 560, 130);
 		Cardtestlabel.setFont(BlackBrutal);
@@ -630,7 +630,7 @@ public class Main {
 				BG.setVisible(true);
 			} 
 		});
-	}
+	}    
 }
 
 class ImagePanel extends JPanel {
