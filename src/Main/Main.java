@@ -628,7 +628,7 @@ public class Main {
 			public void actionPerformed(ActionEvent e) {
 				MakeModulePage.setVisible(false);
 				BG.setVisible(true);
-			}
+			} 
 		});
 	}
 }
