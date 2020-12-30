@@ -618,7 +618,7 @@ public class Main {
 			}
 		});
 
-		JButton BackKey5 = new JButton();
+		JButton BackKey5 = new JButton(); 
 		BackKey5.setIcon(new ImageIcon(Backkeylink));
 		BackKey5.setBounds(12, 12, 130, 78);
 		MakeModulePage.add(BackKey5);
@@ -635,7 +635,7 @@ public class Main {
 
 class ImagePanel extends JPanel {
 	private Image img;
-
+ 
 	public ImagePanel(Image img) {
 		this.img = img;
 		setSize(new Dimension(img.getWidth(null), img.getHeight(null)));
@@ -644,7 +644,7 @@ class ImagePanel extends JPanel {
 	}
 
 	public int getWidth() {
-		return img.getWidth(null);
+		return img.getWidth(null); 
 	}
 
 	public int getHeight() {
