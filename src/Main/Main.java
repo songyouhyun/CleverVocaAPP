@@ -259,6 +259,9 @@ public class Main {
 		
 		JButton MdSavebtn = new JButton("Save");
 		MdSavebtn.setBounds(1200, 650, 350, 100);
+		MdSavebtn.setBorderPainted(false);
+		MdSavebtn.setContentAreaFilled(false);
+		
 		lineborderPanel4.add(MdSavebtn);
 		try {
 			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
