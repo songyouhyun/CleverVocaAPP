@@ -24,7 +24,6 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
-import javax.swing.table.DefaultTableModel;
 
 public class Main {
 
@@ -47,18 +46,18 @@ public class Main {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Main window = new Main();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
+		public static void main(String[] args) {
+			EventQueue.invokeLater(new Runnable() {
+				public void run() {
+					try {
+						Main window = new Main();
+						window.frame.setVisible(true);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
-			}
-		});
-	}
+			});
+		}
 
 	/**
 	 * Create the application.
@@ -83,13 +82,16 @@ public class Main {
 		String SearchLink =new String("./image/Search Button image.jpg");
 		
 		String Backkeylink = new String("./image/Backkey.png");
-		String [] headings = {"Number", "Name","none","none"};
-		Object [] [] data = {
-				{"1","TOEIC 700점 토익 영단어", "Start!", "BookMark"},
-				{"2","TOEIC 800점 토익 영단어", "Start!", "BookMark"},
-				{"3","TOEIC 850점 토익 영단어", "Start!", "BookMark"},
-				{"4","TOEIC 900점 토익 영단어", "Start!", "BookMark"},
-		};
+		
+		String[] headings = {
+				"Number", "Name", "none", "none"
+			};
+			Object[][] data = {
+				{"1", "TOEIC 700점 토익 영단어", "Start!", "BookMark"},
+				{"2", "TOEIC 800점 토익 영단어", "Start!", "BookMark"},
+				{"3", "TOEIC 850점 토익 영단어", "Start!", "BookMark"},
+				{"4", "TOEIC 900점 토익 영단어", "Start!", "BookMark"},
+			};
 
 		ImagePanel BG = new ImagePanel(new ImageIcon(BGlink).getImage());
 		frame.getContentPane().add(BG);
@@ -538,33 +540,27 @@ public class Main {
 		SearchModulePage.add(Searchbtn);
 
 		JTable table = new JTable(data,headings);
+		table.setColumnSelectionAllowed(true);
 		table.setBackground(new Color(255, 255, 255));
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{"1", "TOEIC 700\uC810 \uD1A0\uC775 \uC601\uB2E8\uC5B4", "Start!", "BookMark"},
-				{"2", "TOEIC 800\uC810 \uD1A0\uC775 \uC601\uB2E8\uC5B4", "Start!", "BookMark"},
-				{"3", "TOEIC 850\uC810 \uD1A0\uC775 \uC601\uB2E8\uC5B4", "Start!", "BookMark"},
-				{"4", "TOEIC 900\uC810 \uD1A0\uC775 \uC601\uB2E8\uC5B4", "Start!", "BookMark"},
-			},
-			new String[] {
-				"Number", "Name", "none", "none"
-			}
-		));
+		
+			
 		table.getColumnModel().getColumn(1).setPreferredWidth(160);
 		table.setSize(1010, 460);
 		table.setLocation(20, 21);
 		table.setFillsViewportHeight(true);
 		lineborderPanel3.add(table);
 		table.setFillsViewportHeight(true);
-//		lineborderPanel3.add(new JScrollPane(table));
+		table.setRowHeight(115);
+//		lineborderPanel3.add(new JScrollPane(table));/
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(25f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(40f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
 
 		}
 		table.setFont(BlackBrutal);
+		
 
 		JButton BackKey = new JButton();
 		BackKey.setIcon(new ImageIcon(Backkeylink));
