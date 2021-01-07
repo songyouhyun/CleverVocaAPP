@@ -19,11 +19,13 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
+import javax.swing.table.TableCellRenderer;
 
 public class Main {
 
@@ -83,9 +85,7 @@ public class Main {
 		
 		String Backkeylink = new String("./image/Backkey.png");
 		
-		String[] headings = {
-				"Number", "Name", "none", "none"
-			};
+		String[] headings = { "Number", "Name", "none", "none" };
 			Object[][] data = {
 				{"1", "TOEIC 700점 토익 영단어", "Start!", "BookMark"},
 				{"2", "TOEIC 800점 토익 영단어", "Start!", "BookMark"},
@@ -129,6 +129,13 @@ public class Main {
 		lineborderPanel1.setBounds(290, 290, 1370, 700);
 		WriteTestPage.add(lineborderPanel1);
 		lineborderPanel1.setLayout(null);
+		
+		
+		JPanel lineborderPanel2 = new JPanel();
+		lineborderPanel2.setBounds(304, 200, 1300, 700);
+		CardTestPage.add(lineborderPanel2);
+		lineborderPanel2.setBorder(new LineBorder(Color.LIGHT_GRAY, 10, true));
+		lineborderPanel2.setLayout(null);
 
 		JPanel lineborderPanel3 = new JPanel();
 		lineborderPanel3.setBorder(new LineBorder(Color.LIGHT_GRAY,20,true));
@@ -142,12 +149,104 @@ public class Main {
 		MakeModulePage.add(lineborderPanel4);
 		lineborderPanel4.setLayout(null);
 		
+		JPanel WordCardTestPanel = new JPanel();
+		WordCardTestPanel.setBounds(50, 50, 500, 600);
+		WordCardTestPanel.setBorder(new LineBorder(new Color(192, 192, 192), 10, true));
+		lineborderPanel2.add(WordCardTestPanel);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		ImagePanel StartModulePanel = new ImagePanel(new ImageIcon(BGlink).getImage());
+		frame.getContentPane().add(StartModulePanel);
+		StartModulePanel.setVisible(false);
+		StartModulePanel.setLayout(null);
+		
+		ImagePanel StartModulePanel2 = new ImagePanel(new ImageIcon(BGlink).getImage());
+		frame.getContentPane().add(StartModulePanel2);
+		StartModulePanel2.setVisible(false);
+		StartModulePanel2.setLayout(null);
+		
+		ImagePanel StartModulePanel3 = new ImagePanel(new ImageIcon(BGlink).getImage());
+		frame.getContentPane().add(StartModulePanel3);
+		StartModulePanel3.setVisible(false);
+		StartModulePanel3.setLayout(null);
+		
+		ImagePanel StartModulePanel4 = new ImagePanel(new ImageIcon(BGlink).getImage());
+		frame.getContentPane().add(StartModulePanel4);
+		StartModulePanel4.setVisible(false);
+		StartModulePanel4.setLayout(null);
+		
+		JPanel lineborderPanel5 = new JPanel();
+		lineborderPanel5.setBackground(new Color(240, 255, 240));
+		lineborderPanel5.setBorder(new LineBorder(Color.LIGHT_GRAY, 10, true));
+		lineborderPanel5.setBounds(525, 290, 900, 500);
+		StartModulePanel.add(lineborderPanel5);
+		lineborderPanel5.setLayout(null);		
+		
+		JLabel WritetestWord_1 = new JLabel("clever");
+		WritetestWord_1.setHorizontalAlignment(SwingConstants.CENTER);
+		WritetestWord_1.setBounds(170, 97, 560, 130);
+		lineborderPanel5.add(WritetestWord_1);
+		try {
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(100f);
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
+		} catch (IOException | FontFormatException e) {
+
+		}
+		WritetestWord_1.setFont(BlackBrutal);
+		
+		JLabel WritetestWord_2 = new JLabel("영리한");
+		WritetestWord_2.setHorizontalAlignment(SwingConstants.CENTER);
+		WritetestWord_2.setBounds(170, 270, 560, 130);
+		lineborderPanel5.add(WritetestWord_2);
+		try {
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(70f);
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
+		} catch (IOException | FontFormatException e) {
+
+		}
+		WritetestWord_2.setFont(BlackBrutal);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		InsertMdName = new JTextField();
+		InsertMdName.setText("Title here");
 		InsertMdName.setBounds(50, 50, 1100, 100);
 		lineborderPanel4.add(InsertMdName);
 		InsertMdName.setColumns(10);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(90f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
@@ -156,11 +255,12 @@ public class Main {
 		InsertMdName.setFont(BlackBrutal);
 		
 		InsertWordEn01 = new JTextField();
-		InsertWordEn01.setBounds(50, 200, 500, 100);
+		InsertWordEn01.setText("clever");
+		InsertWordEn01.setBounds(50, 290, 500, 90);
 		lineborderPanel4.add(InsertWordEn01);
 		InsertWordEn01.setColumns(10);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(90f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
@@ -169,11 +269,12 @@ public class Main {
 		InsertWordEn01.setFont(BlackBrutal);
 		
 		InsertWordEn02 = new JTextField();
+		InsertWordEn02.setText("practice");
 		InsertWordEn02.setColumns(10);
-		InsertWordEn02.setBounds(50, 350, 500, 100);
+		InsertWordEn02.setBounds(50, 410, 500, 90);
 		lineborderPanel4.add(InsertWordEn02);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(90f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
@@ -182,11 +283,12 @@ public class Main {
 		InsertWordEn02.setFont(BlackBrutal);
 		
 		InsertWordEn03 = new JTextField();
+		InsertWordEn03.setText("text here");
 		InsertWordEn03.setColumns(10);
-		InsertWordEn03.setBounds(50, 500, 500, 100);
+		InsertWordEn03.setBounds(50, 530, 500, 90);
 		lineborderPanel4.add(InsertWordEn03);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(90f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
@@ -195,11 +297,12 @@ public class Main {
 		InsertWordEn03.setFont(BlackBrutal);
 		
 		InsertWordEn04 = new JTextField();
+		InsertWordEn04.setText("text here");
 		InsertWordEn04.setColumns(10);
-		InsertWordEn04.setBounds(50, 650, 500, 100);
+		InsertWordEn04.setBounds(50, 650, 500, 90);
 		lineborderPanel4.add(InsertWordEn04);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(90f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
@@ -208,11 +311,12 @@ public class Main {
 		InsertWordEn04.setFont(BlackBrutal);
 		
 		InsertWordKo01 = new JTextField();
+		InsertWordKo01.setText("연습");
 		InsertWordKo01.setColumns(10);
-		InsertWordKo01.setBounds(650, 350, 500, 100);
+		InsertWordKo01.setBounds(650, 410, 500, 90);
 		lineborderPanel4.add(InsertWordKo01);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(90f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
@@ -221,11 +325,12 @@ public class Main {
 		InsertWordKo01.setFont(BlackBrutal);
 		
 		InsertWordKo02 = new JTextField();
+		InsertWordKo02.setText("text here");
 		InsertWordKo02.setColumns(10);
-		InsertWordKo02.setBounds(650, 500, 500, 100);
+		InsertWordKo02.setBounds(650, 530, 500, 90);
 		lineborderPanel4.add(InsertWordKo02);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(90f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
@@ -234,11 +339,12 @@ public class Main {
 		InsertWordKo02.setFont(BlackBrutal);
 		
 		InsertWordKo03 = new JTextField();
+		InsertWordKo03.setText("text here");
 		InsertWordKo03.setColumns(10);
-		InsertWordKo03.setBounds(650, 650, 500, 100);
+		InsertWordKo03.setBounds(650, 650, 500, 90);
 		lineborderPanel4.add(InsertWordKo03);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(90f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
@@ -247,11 +353,12 @@ public class Main {
 		InsertWordKo03.setFont(BlackBrutal);
 		
 		InsertWordKo00 = new JTextField();
+		InsertWordKo00.setText("영리한");
 		InsertWordKo00.setColumns(10);
-		InsertWordKo00.setBounds(650, 200, 500, 100);
+		InsertWordKo00.setBounds(650, 290, 500, 90);
 		lineborderPanel4.add(InsertWordKo00);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(90f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
@@ -266,7 +373,7 @@ public class Main {
 		
 		lineborderPanel4.add(MdSavebtn);
 		try {
-			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(90f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
 		} catch (IOException | FontFormatException e) {
@@ -274,19 +381,50 @@ public class Main {
 		}
 		MdSavebtn.setFont(BlackBrutal);
 		
-				JPanel lineborderPanel2 = new JPanel();
-				lineborderPanel2.setBounds(304, 200, 1300, 700);
-				CardTestPage.add(lineborderPanel2);
-				lineborderPanel2.setBorder(new LineBorder(Color.LIGHT_GRAY, 10, true));
-				lineborderPanel2.setLayout(null);
-				
-				JPanel WordCardPanel = new JPanel();
-				WordCardPanel.setBorder(new LineBorder(new Color(192, 192, 192), 10, true));
-				WordCardPanel.setBounds(50, 50, 500, 600);
-				lineborderPanel2.add(WordCardPanel);
-				
-				JLabel lblNewLabel = new JLabel("New label");
-				WordCardPanel.add(lblNewLabel);
+		JLabel lblNewLabel = new JLabel("1 / 1000");
+		lblNewLabel.setBounds(1250, 200, 600, 100);
+		lineborderPanel4.add(lblNewLabel);
+		try {
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(70f);
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
+		} catch (IOException | FontFormatException e) {
+
+		}
+		lblNewLabel.setFont(BlackBrutal);
+		
+		JLabel lblWord = new JLabel("Word");
+		lblWord.setBounds(225, 200, 200, 70);
+		lineborderPanel4.add(lblWord);
+		try {
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(70f);
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
+		} catch (IOException | FontFormatException e) {
+
+		}
+		lblWord.setFont(BlackBrutal);
+		
+		
+		JLabel lblWord_1 = new JLabel("Meaning");
+		lblWord_1.setBounds(780, 200, 230, 70);
+		lineborderPanel4.add(lblWord_1);
+		try {
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(70f);
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
+		} catch (IOException | FontFormatException e) {
+			
+		}
+		lblWord_1.setFont(BlackBrutal);
+		
+		
+		
+
+		JLabel CardTestlbl = new JLabel("Clever");
+		WordCardTestPanel.add(CardTestlbl);
+		CardTestlbl.setBounds(20, 100, 400, 100);
+		
 
 
 		JLabel lblTitle = new JLabel("Clever Voca", SwingConstants.CENTER);
@@ -464,6 +602,7 @@ public class Main {
 
 		}
 		txtWriteHere.setFont(BlackBrutal);
+		
 
 		JLabel Writetestlabel = new JLabel("Write Test");
 		Writetestlabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -478,8 +617,24 @@ public class Main {
 		}
 		WriteTestPage.add(Writetestlabel);
 		Writetestlabel.setFont(BlackBrutal);
+		
+		
+		JLabel WORDCARDlabel = new JLabel("WORD CARD");
+		WORDCARDlabel.setHorizontalAlignment(SwingConstants.CENTER);
+		WORDCARDlabel.setBounds(695, 97, 560, 130);
+		WORDCARDlabel.setFont(BlackBrutal);
+		try {
+			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(130f);
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(fonts)));
+		} catch (IOException | FontFormatException e) {
 
-		JLabel Cardtestlabel = new JLabel("CardTestlabel");
+		}
+		StartModulePanel.add(WORDCARDlabel);
+		WORDCARDlabel.setFont(BlackBrutal);
+		
+		
+		JLabel Cardtestlabel = new JLabel("CardTest");
 		Cardtestlabel.setHorizontalAlignment(SwingConstants.CENTER);
 		Cardtestlabel.setBounds(695, 50, 560, 130);
 		Cardtestlabel.setFont(BlackBrutal);
@@ -539,6 +694,102 @@ public class Main {
 		Searchbtn.setBounds(1420,270,70,70);
 		SearchModulePage.add(Searchbtn);
 
+		
+		
+		
+		
+		
+		
+		
+		
+		JButton startbtn = new JButton("Start!");
+		startbtn.setBackground(new Color(255, 255, 255));
+		startbtn.setFont(new Font("Sitka Small", Font.BOLD | Font.ITALIC, 20));
+		startbtn.setBounds(567, 20, 231, 115);
+		lineborderPanel3.add(startbtn);
+		startbtn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				StartModulePanel.setVisible(true);
+				SearchModulePage.setVisible(false);
+			}
+		});
+		
+		JButton startbtn2 = new JButton("Start!");
+		startbtn2.setFont(new Font("Sitka Small", Font.BOLD | Font.ITALIC, 20));
+		startbtn2.setBackground(new Color(255, 255, 255));
+		startbtn2.setBounds(567, 135, 231, 115);
+		lineborderPanel3.add(startbtn2);
+		startbtn2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				StartModulePanel.setVisible(true);
+				SearchModulePage.setVisible(false);
+			}
+		});
+		
+		JButton startbtn3 = new JButton("Start!");
+		startbtn3.setBackground(new Color(255, 255, 255));
+		startbtn3.setFont(new Font("Sitka Small", Font.BOLD | Font.ITALIC, 20));
+		startbtn3.setBounds(567, 250, 231, 115);
+		lineborderPanel3.add(startbtn3);
+		startbtn3.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				StartModulePanel.setVisible(true);
+				SearchModulePage.setVisible(false);
+			}
+		});
+		
+		JButton startbtn4 = new JButton("Start!");
+		startbtn4.setBackground(new Color(255, 255, 255));
+		startbtn4.setFont(new Font("Sitka Small", Font.BOLD | Font.ITALIC, 20));
+		startbtn4.setBounds(567, 365, 231, 115);
+		lineborderPanel3.add(startbtn4);
+		startbtn4.addActionListener(new ActionListener() {
+		
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				StartModulePanel.setVisible(true);
+				SearchModulePage.setVisible(false);
+			}
+		});
+		
+		
+		JButton Backarrowbtn = new JButton();
+		Backarrowbtn.setIcon(new ImageIcon("D:\\CleverVoca\\CleverVocaApp\\image\\fix.png"));
+		Backarrowbtn.setBounds(1700, 900, 130, 78);
+		StartModulePanel.add(Backarrowbtn);
+		Backarrowbtn.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
+		JButton Backarrowbtnright = new JButton();
+		Backarrowbtnright.setIcon(new ImageIcon("D:\\CleverVoca\\CleverVocaApp\\image\\pretty-arrow.png"));
+		Backarrowbtnright.setBounds(60, 900, 130, 78);
+		StartModulePanel.add(Backarrowbtnright);
+		Backarrowbtnright.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
+		
+		
+		
+		
+		
+		
+		
 		JTable table = new JTable(data,headings);
 		table.setColumnSelectionAllowed(true);
 		table.setBackground(new Color(255, 255, 255));
@@ -551,7 +802,6 @@ public class Main {
 		lineborderPanel3.add(table);
 		table.setFillsViewportHeight(true);
 		table.setRowHeight(115);
-//		lineborderPanel3.add(new JScrollPane(table));/
 		try {
 			BlackBrutal = Font.createFont(Font.TRUETYPE_FONT, new File(fonts)).deriveFont(40f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -560,6 +810,20 @@ public class Main {
 
 		}
 		table.setFont(BlackBrutal);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 
 		JButton BackKey = new JButton();
@@ -624,6 +888,58 @@ public class Main {
 			public void actionPerformed(ActionEvent e) {
 				MakeModulePage.setVisible(false);
 				BG.setVisible(true);
+			} 
+		});
+		
+		JButton BackKey6 = new JButton(); 
+		BackKey6.setIcon(new ImageIcon(Backkeylink));
+		BackKey6.setBounds(12, 12, 130, 78);
+		StartModulePanel.add(BackKey6);
+		BackKey6.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				StartModulePanel.setVisible(false);
+				SearchModulePage.setVisible(true);
+			} 
+		});
+		
+		JButton BackKey7 = new JButton(); 
+		BackKey7.setIcon(new ImageIcon(Backkeylink));
+		BackKey7.setBounds(12, 12, 130, 78);
+		StartModulePanel2.add(BackKey7);
+		BackKey7.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				StartModulePanel2.setVisible(false);
+				SearchModulePage.setVisible(true);
+			} 
+		});
+		
+		JButton BackKey8 = new JButton(); 
+		BackKey8.setIcon(new ImageIcon(Backkeylink));
+		BackKey8.setBounds(12, 12, 130, 78);
+		StartModulePanel3.add(BackKey8);
+		BackKey8.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				StartModulePanel3.setVisible(false);
+				SearchModulePage.setVisible(true);
+			} 
+		});
+		
+		JButton BackKey9 = new JButton(); 
+		BackKey9.setIcon(new ImageIcon(Backkeylink));
+		BackKey9.setBounds(12, 12, 130, 78);
+		StartModulePanel4.add(BackKey9);
+		BackKey9.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				StartModulePanel4.setVisible(false);
+				SearchModulePage.setVisible(true);
 			} 
 		});
 	}    
